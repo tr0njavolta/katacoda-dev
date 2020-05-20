@@ -1,0 +1,10 @@
+# A policy that requires an integer to be even
+# A parameter that must be set to an integer.
+param the_number
+# Print the number
+print("The number", the_number, "is not divisible by 15, 5, or 3")
+# The main rule
+main = rule {
+  # Divide the integer by 2 and compare the remainder to 0
+  the_number % 15 is 0 or the_number % 5 is 0 or the_number % 3 is 0
+}
