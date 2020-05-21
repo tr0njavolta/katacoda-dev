@@ -8,17 +8,21 @@ print("The number", the_number, "is not divisible by 15, 5, or 3")
 
 # Evaluate if the number is divisible by 15 - FizzBuzz
 is_fizzbuzz = rule {
+	the_number % 15 is 0
 }
 
 # Evaluate if the number is divisible by 5 - Buzz
 is_buzz = rule {
+	the_number % 5 is 0
 }
 
 # Evaluate if the number is divisible by 3 - Fizz
 is_fizz = rule {
+	the_number % 3 is 0
 }
 
 # The main rule
 main = rule {
 	# Logic to evaluate if the number supplied fits your restraints
+	is_fizzbuzz or is_buzz or is_fizz else null
 }

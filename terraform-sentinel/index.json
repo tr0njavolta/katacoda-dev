@@ -9,25 +9,6 @@
         "code": "courseBase1.sh",
         "credits": "https://learn.hashicorp.com/terraform"
     },
-        "assets": {
-      "host01": [
-        { "file": "fail.json", "target": "~/" },
-        { "file": "index.html", "target": "~/" },
-        { "file": "main.tf", "target": "~/" },
-        { "file": "mock-tfconfig-v2.sentinel", "target": "~/" },
-        { "file": "mock-tfconfig.sentinel", "target": "~/" },
-        { "file": "mock-tfplan-v2-fail.sentinel", "target": "~/" },
-        { "file": "mock-tfplan-v2-pass.sentinel", "target": "~/" },
-        { "file": "mock-tfplan-v2.sentinel", "target": "~/" },
-        { "file": "mock-tfplan.sentinel", "target": "~/" },
-        { "file": "mock-tfrun.sentinel", "target": "~/" },
-        { "file": "mock-tfstate-v2.sentinel", "target": "~/" },
-        { "file": "mock-tfstate.sentinel", "target": "~/" },
-        { "file": "pass.json", "target": "~/" },
-        { "file": "require-fizz.sentinel", "target": "~/" },
-        { "file": "sentinel.json", "target": "~/" }
-      ]
-    },
     "steps": [
         {
             "title": "Your first Sentinel Policy",
