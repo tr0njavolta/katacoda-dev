@@ -9,19 +9,15 @@
         "code": "courseBase.sh",
         "credits": "https://learn.hashicorp.com/terraform"
     },
-    "steps": [
-      {
-        "title": "Your First Sentinel Policy",
-        "text": "step1.md"
-      }
-    ],
     "finish": {
       "text": "finish.md",
       "credits": "https://learn.hashicorp.com/terraform"
     },
     "assets": {
-      "config": [
-        { "file": "main.tf", "target": "~/terraform-sentinel" }
+      "host01": [
+        { 
+            "file": "main.tf", 
+            "target": "~/terraform-sentinel" }
       ]
     }
   },
