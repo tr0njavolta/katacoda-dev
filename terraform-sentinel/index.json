@@ -21,21 +21,21 @@
     },
     "assets": {
       "host01": [
-        { "file": "fail.json", "target": "~/terraform-sentinel" },
-        { "file": "index.html", "target": "~/terraform-sentinel" },
-        { "file": "main.tf", "target": "~/terraform-sentinel" },
-        { "file": "mock-tfconfig-v2.sentinel", "target": "~/terraform-sentinel" },
-        { "file": "mock-tfconfig.sentinel", "target": "~/terraform-sentinel" },
-        { "file": "mock-tfplan-v2-fail.sentinel", "target": "~/terraform-sentinel" },
-        { "file": "mock-tfplan-v2-pass.sentinel", "target": "~/terraform-sentinel" },
-        { "file": "mock-tfplan-v2.sentinel", "target": "~/terraform-sentinel" },
-        { "file": "mock-tfplan.sentinel", "target": "~/terraform-sentinel" },
-        { "file": "mock-tfrun.sentinel", "target": "~/terraform-sentinel" },
-        { "file": "mock-tfstate-v2.sentinel", "target": "~/terraform-sentinel" },
-        { "file": "mock-tfstate.sentinel", "target": "~/terraform-sentinel" },
-        { "file": "pass.json", "target": "~/terraform-sentinel" },
-        { "file": "require-fizz.sentinel", "target": "~/terraform-sentinel" },
-        { "file": "sentinel.json", "target": "~/terraform-sentinel" }
+        { "file": "fail.json", "target": "~/" },
+        { "file": "index.html", "target": "~/" },
+        { "file": "main.tf", "target": "~/" },
+        { "file": "mock-tfconfig-v2.sentinel", "target": "~/" },
+        { "file": "mock-tfconfig.sentinel", "target": "~/" },
+        { "file": "mock-tfplan-v2-fail.sentinel", "target": "~/" },
+        { "file": "mock-tfplan-v2-pass.sentinel", "target": "~/" },
+        { "file": "mock-tfplan-v2.sentinel", "target": "~/" },
+        { "file": "mock-tfplan.sentinel", "target": "~/" },
+        { "file": "mock-tfrun.sentinel", "target": "~/" },
+        { "file": "mock-tfstate-v2.sentinel", "target": "~/" },
+        { "file": "mock-tfstate.sentinel", "target": "~/" },
+        { "file": "pass.json", "target": "~/" },
+        { "file": "require-fizz.sentinel", "target": "~/" },
+        { "file": "sentinel.json", "target": "~/" }
       ]
     }
   },
