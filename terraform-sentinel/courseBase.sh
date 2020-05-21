@@ -21,6 +21,4 @@ unzip sentinel_0.15.5_linux_amd64.zip -d /usr/local/bin/
 # Run Docker Compose up (daemon)
 docker-compose up -d
 
-clear
-
 echo "Ready!"
