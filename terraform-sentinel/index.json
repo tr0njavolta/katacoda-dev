@@ -1,7 +1,7 @@
 {
   "title": "Sentinel Tutorial",
   "description": "Writing & Testing Sentinel Policies in the Sentinel CLI and publishing to TFC",
-  "time": 1,
+  "time": "30 minutes",
   "icon": "fa-terraform",
   "details": {
     "intro": {
