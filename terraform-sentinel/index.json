@@ -2,7 +2,7 @@
   "title": "Sentinel Tutorial",
   "description": "Writing & Testing Sentinel Policies in the Sentinel CLI and publishing to TFC",
   "time": 1,
-  "icon": "fa-sentinel",
+  "icon": "fa-terraform",
   "details": {
     "intro": {
         "text": "intro.md",
@@ -30,6 +30,6 @@
     "uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands version 0.1.\u001b[m\r\n"
   },
   "backend": {
-    "imageid": "hashicorp-hashistack",
+    "imageid": "hashicorp-hashistack"
   }
 }
