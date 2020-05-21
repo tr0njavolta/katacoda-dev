@@ -9,16 +9,6 @@
         "code": "courseBase.sh",
         "credits": "https://learn.hashicorp.com/terraform"
     },
-    "steps": [
-        {
-            "title": "Your first Sentinel Policy",
-            "text": "step1.md"
-        }
-      ],
-    "finish": {
-      "text": "finish.md",
-      "credits": "https://learn.hashicorp.com/terraform"
-    },
     "assets": {
       "host01": [
         { "file": "fail.json", "target": "~/" },
@@ -37,6 +27,16 @@
         { "file": "require-fizz.sentinel", "target": "~/" },
         { "file": "sentinel.json", "target": "~/" }
       ]
+    },
+    "steps": [
+        {
+            "title": "Your first Sentinel Policy",
+            "text": "step1.md"
+        }
+      ],
+    "finish": {
+      "text": "finish.md",
+      "credits": "https://learn.hashicorp.com/terraform"
     }
   },
   "environment": {
