@@ -1,9 +1,6 @@
  mkdir -p ~/terraform-sentinel
 $ cd ~/terraform-sentinel
 
-# Install Terraform and init config
-# Install docker - Ubuntu doesn't have docker
-apt-get install docker-ce docker-ce-cli 
 
 # Install unzip - Katacoda docker image doesn't have unzip
 apt-get install unzip
