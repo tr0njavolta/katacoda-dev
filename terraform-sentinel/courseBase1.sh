@@ -1,9 +1,9 @@
 mkdir -p ~/terraform-sentinel
 cd ~/terraform-sentinel
 
-mkdir -p policies/test/require-fizz
-mkdir -p policies/testdata
-mkdir -p assets/assets
+mkdir -p tf-config
+mkdir -p mock-data
+mkdir -p test/restrict-s3-buckets
 
 # Install unzip - Katacoda docker image doesn't have unzip
 apt-get install unzip
@@ -18,12 +18,12 @@ sleep 15s
 
 cd ..
 
-mv fail.json pass.json ~/terraform-sentinel/policies/test/require-fizz
-mv mock-tfconfig.sentinel mock-tfplan-v2-pass.sentinel mock-tfplan.sentinel mock-tfstate-v2.sentinel mock-tfconfig-v2.sentinel mock-tfplan-v2-fail.sentinel mock-tfplan-v2.sentinel mock-tfrun.sentinel mock-tfstate.sentinel ~/terraform-sentinel/policies/testdata
-mv sentinel.json ~/terraform-sentinel/policies
-mv require-fizz.sentinel ~/terraform-sentinel/policies
-mv index.html ~/terraform-sentinel/assets/assets
-mv main.tf ~/terraform-sentinel/assets
+mv fail.json pass.json ~/terraform-sentinel/test/restrict-s3-buckets
+mv mock-tfconfig.sentinel mock-tfplan-pass-v2.sentinel mock-tfplan.sentinel mock-tfstate-v2.sentinel mock-tfconfig-v2.sentinel mock-tfplan-fail-v2.sentinel mock-tfplan-v2.sentinel mock-tfrun.sentinel mock-tfstate.sentinel ~/terraform-sentinel/mock-data
+mv sentinel.json ~/terraform-sentinel
+mv restrict-s3-buckets.sentinel ~/terraform-sentinel
+mv index.html ~/terraform-sentinel/tf-config
+mv main.tf ~/terraform-sentinel/tf-config
 
 clear
 
