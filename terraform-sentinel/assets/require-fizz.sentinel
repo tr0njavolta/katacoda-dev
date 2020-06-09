@@ -24,5 +24,5 @@ is_fizz = rule {
 # The main rule
 main = rule {
 	# Logic to evaluate if the number supplied fits your restraints
-	is_fizzbuzz or is_buzz or is_fizz else null
+	(is_fizzbuzz or is_buzz or is_fizz) else null
 }

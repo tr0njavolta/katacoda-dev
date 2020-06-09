@@ -1,20 +1,15 @@
 import "tfplan/v2" as tfplan
 
-
-s3_buckets = filter tfplan.resource_changes as rc {
+# Create a filter to find S3 buckets being created or updated in your Terraform 
+s3_buckets = filter tfplan.resource_changes as _, rc {
   rc.type is "aws_s3_bucket" and
   (rc.change.actions contains "create" or rc.change.actions is ["update"])
 }
 
-required_tags = [
-	"Name",
-	"Environment",
-]
-
 bucket_tags = rule {
-	all s3_buckets as instances {
+	all s3_buckets as _, instances {
 		all required_tags as rt {
-		instances.change.after.tags contains rt
+		Instances.change.after.tags is not null
 		}
 	}
 }
