@@ -1,17 +1,21 @@
 Now that you have created a policy, you will add some additional restrictions. 
 
-First, specify the exact tags the policy should search for:
+In `restrict-s3-buckets.sentinel`{{open}}, add required tags to your policy.
 
-# Add specific tags
+# Create a required tags variable
+
+```
 required_tags = [
 	"Name",
     "Environment",
 ]
+```{{copy}}
 
+# Create a rule for your required tags
 
+Edit the `bucket_tags` rule to compare to your `require_tags` variable.
 
-# Add specific tag rule
-
+```
 bucket_tags = rule {
 	all s3_buckets as _, buckets {
 		all required_tags as rt {
@@ -19,26 +23,41 @@ bucket_tags = rule {
 		}
 	}
 }
+```{{copy}}
 
 
-# Add ACL restriction
+# Add an ACL restriction
 
+For S3 buckets, it is considered a good practice to restrict the level of access to the objects to prevent unauthorized editing. Copy this list of allowed ACLs for your S3 bucket and paste it below your `bucket_tags` rule
+
+```
 allowed_acls = [
 	"public-read",
 	"private",
 ]
+```{{copy}}
 
-# Add ACL Rule
+# Add a rule for your ACLs
 
+Copy and paste this rule below your `allowed_acls` to evalute the ACL data in your plan.
+
+```
 acl_allowed = rule {
 	all s3_buckets as _, buckets {
 		buckets.change.after.acl in allowed_acls
 	}
 }
+```{{copy}}
 
 
-# Add main rule
+# Edit the main rule to evaluate both rules
 
+Your main rule must evaluate both the `acl_allowed` and `bucket_tags` rule. Copy and paste this as your main rule.
+
+```
 main = rule {
     (acl_allowed and bucket_tags) else false
 }
+```{{copy}}
+
+In the next step, you will edit your mock data to create a failing test suite.
