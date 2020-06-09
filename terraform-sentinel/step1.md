@@ -8,39 +8,31 @@ Proper testing of a policy requires that these values be able to be mocked - or,
 
 In order to test this policy, this scenario has pre-generated [mock data from Terraform Cloud](https://www.terraform.io/docs/cloud/sentinel/mock.html). To learn how to generate mock data for testing in the Sentinel CLI, follow the [Sentinel Learn guides on Sentinel & Terraform Cloud](https://www.learn.hashicorp.com/terraform?LINK).
 
-Part of writing Sentinel policies is to determine your parameters based on your infrastructure. For this configuration, your S3 bucket must meet the following requirements:
+Part of writing Sentinel policies is to determine your parameters based on your infrastructure. For your first policy, you must ensure the following: 
 
-- Must not have public-read-write access
-- Must have server-side encryption
-- Must be tagged with the name of the user who created it
+- Any S3 buckets created or updated have at least 1 tag
 
-Your stub policy is in `terraform-sentinel/policies/restrict-s3-buckets`. Navigate to the `restrict-s3-buckets.sentinel` in your browser.
+The stub of this policy is in `restrict-s3-buckets.sentinel`.
 
-```
-import "tfplan/v2" as tfplan
+The first step in this policy relies on creating a filter for the s3_bucket resources in the Terraform Cloud plan.
 
-# Filter S3 buckets
-s3_buckets = 
-
-# Allowed S3 ACLs
-# Don't allow public-read-write
-allowed_acls = 
-
-# Required tags
-required_tags = 
-
-# Rule to restrict S3 bucket ACLs
-acl_allowed = 
+s3_buckets = filter tfplan.resource_changes as _, rc {
+	rc.type is "aws_s3_bucket" and
+		(rc.change.actions contains "create" or rc.change.actions is ["update"])
+}
 
 
-# Rule to require server-side encryption
-require_encryption =
+Create bucket rule
 
-# Rule to require bucket tags
-bucket_tags = 
+bucket_tags = rule {
+	all s3_buckets as _, buckets {
+		buckets.change.after.tags is not null
+		}
+	}
 
-# Main rule that requires other rules to be true
-main = 
-```
 
-The first step in this scenario is to apply a filter to the resources you want to evaluate.
+Create main rule
+
+main = rule {
+    bucket_tags else is false
+}

@@ -16,22 +16,31 @@
         { "file": "main.tf", "target": "~/" },
         { "file": "mock-tfconfig-v2.sentinel", "target": "~/" },
         { "file": "mock-tfconfig.sentinel", "target": "~/" },
-        { "file": "mock-tfplan-v2-fail.sentinel", "target": "~/" },
-        { "file": "mock-tfplan-v2-pass.sentinel", "target": "~/" },
         { "file": "mock-tfplan-v2.sentinel", "target": "~/" },
         { "file": "mock-tfplan.sentinel", "target": "~/" },
         { "file": "mock-tfrun.sentinel", "target": "~/" },
         { "file": "mock-tfstate-v2.sentinel", "target": "~/" },
         { "file": "mock-tfstate.sentinel", "target": "~/" },
         { "file": "pass.json", "target": "~/" },
-        { "file": "require-fizz.sentinel", "target": "~/" },
         { "file": "sentinel.json", "target": "~/" }
       ]
     },
     "steps": [
         {
-            "title": "Your first Sentinel Policy",
-            "text": "step1.md"
+          "title": "Your first Sentinel Policy",
+          "text": "step1.md"
+        },
+        {
+          "title": "Adding additonal requirements",
+          "text": "step2.md"
+        },
+        {
+          "title": "Edit mock data",
+          "text": "step3.md"
+        },
+        {
+          "title": "Write passing and failing tests",
+          "text": "step4.md"
         }
       ],
     "finish": {
