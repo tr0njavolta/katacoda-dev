@@ -6,7 +6,7 @@
   "details": {
     "intro": {
         "text": "intro.md",
-        "code": "courseBase1.sh",
+        "code": "courseBase.sh",
         "credits": "https://learn.hashicorp.com/terraform"
     },
         "assets": {
