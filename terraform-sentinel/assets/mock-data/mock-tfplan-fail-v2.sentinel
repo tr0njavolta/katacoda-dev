@@ -21,7 +21,6 @@ planned_values = {
 			"tainted":        false,
 			"type":           "aws_s3_bucket",
 			"values": {
-				#ACLVALUE
 				"acl":                                  "public-read",
 				"bucket_prefix":                        null,
 				"cors_rule":                            [],
@@ -120,7 +119,8 @@ resource_changes = {
 				"create",
 			],
 			"after": {
-				"acl":                                  "public-read",
+				#ACLVALUE
+				"acl":                                  "<UPDATE_VALUE>",
 				"bucket_prefix":                        null,
 				"cors_rule":                            [],
 				"force_destroy":                        true,
@@ -130,9 +130,10 @@ resource_changes = {
 				"object_lock_configuration":            [],
 				"replication_configuration":            [],
 				"server_side_encryption_configuration": [],
+				#TAGVALUE
 				"tags": {
-					"Environment": "Prod",
-					"Name":        "HashiConf-Digital",
+					"<UPDATE_ID>": "Prod",
+					"<UPDATE_ID":        "HashiConf-Digital",
 					"TTL":			60,
 				},
 				"website": [

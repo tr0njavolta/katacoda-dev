@@ -1,6 +1,20 @@
 Now that you have created a policy, you will add some additional restrictions. 
 
-In `restrict-s3-buckets.sentinel`{{open}}, add required tags to your policy.
+In `terraform-sentine/restrict-s3-buckets.sentinel`{{open}}, add required tags to your policy.
+
+# Create a print statement for debugging
+
+Your policy plan collection contains a lot of data. To see what data you are giving to your policy, create a print statement below your filter statement.
+
+```
+print(s3_buckets)
+```{{copy}}
+
+Run your Sentinel CLI apply again to see what data your plan contains.
+
+```
+sentinel apply -trace restrict-s3-buckets.sentinel
+```{{execute}}
 
 # Create a required tags variable
 

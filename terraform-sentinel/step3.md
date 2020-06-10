@@ -6,11 +6,9 @@ There is a file called `mock-tfplan-fail-v2.sentinel`{{open}}. Open that file an
 
 # Edit your mock data ACL
 
+At line 123, the mock contains the ACL for the configuration. Instead of `public-read`, which is allowed in your policy, change this to `public-read-write`. 
 
-
-At line 121, the mock contains the ACL for the configuration. Instead of `public-read`, which is allowed in your policy, change this to `public-read-write`. 
-
-If you are having trouble finding the specific line in the collection, search for #ACLVALUE in the file.
+If you are having trouble finding the specific line in the collection, search for "<UPDATE_VALUE> in the file.
 ```
 				"acl":                                  "public-read-write",
 ```{{copy}}
@@ -19,9 +17,9 @@ If you are having trouble finding the specific line in the collection, search fo
 
 Review the mock data provided for you. `mock-tfplan-v2.sentinel`{{open}}
 
-At line 131, the mock contains the tags for the configuration. To create a failing scenario, replace the tag identifiers for different values. These tag identifiers search for an exact match so any additional text will cause a failure. 
+At line 133, the mock contains the tags for the configuration. To create a failing scenario, replace the tag identifiers for different values. These tag identifiers search for an exact match so any additional text will cause a failure. 
 
-If you have trouble finding the specific line, search for #TAGVALUE in the file
+If you have trouble finding the specific line, search for "<UPDATE_ID>" in the file
 
 ```
 				"tags": {
@@ -31,19 +29,41 @@ If you have trouble finding the specific line, search for #TAGVALUE in the file
 				},
 ```{{copy}}
 
-# Save your failing data as a new file
+# Create a failing test file
 
-Now that you have created a plan in which your Sentinel policy will fail, you need to rename this mock data so it can be consumed in a failing test. 
+Now that you have created a plan in which your Sentinel policy will fail, you need to create test file for a failing test.
 
-The mock data from a Terraform plan is what Sentinel evaluates 
+Open `terraform-sentinel/test/restrict-s3-buckets/fail.json`{{open}} to create a path to the failing mock data.
 
-Write Passing Test
-Copy mock data to new file "-pass-v2.sentinel"
-Create a test case
+Copy and paste the relative path to your failing mock in the test file.
 
-Write Failing Tests
-Copy mock data to new file "-fail-v2.sentinel"
-Find & replace rule data
-Create a test case
+```
+{
+  "mock": {
+    "tfplan/v2": "../../mock-data/mock-tfplan-fail-v2.sentinel"
+  },
+```{{copy}}
 
-Run CLI test w/ trace
+Review the rest of the test file. This test ensures the main rule will evalute to false.
+
+# Create a passing test file
+Open `terraform-sentinel/test/restrict-s3-buckets/pass.json`{{open}} and create a path to the passing mock data that has already been provided for you.
+
+Copy and paste the relative path to your passing mock in the test file.
+
+```
+{
+  "mock": {
+    "tfplan/v2": "../../mock-data/mock-tfplan-pass-v2.sentinel"
+  },
+```{{copy}}
+
+Review the rest of the test file. This test ensures the main rule will evalute to true.
+
+# Run a test in the Sentinel CLI
+
+In your terminal, run a test with the `verbose` flag
+
+```
+sentinel test -verbose restrict-s3-buckets.sentinel
+```{{execute}}

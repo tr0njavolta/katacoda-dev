@@ -1,6 +1,6 @@
 {
   "mock": {
-    "tfconfig": "mock-tfconfig.sentinel",
+    "tfconfig": "mock-data/mock-tfconfig.sentinel",
     "tfconfig/v1": "mock-tfconfig.sentinel",
     "tfconfig/v2": "mock-tfconfig-v2.sentinel",
     "tfplan": "mock-tfplan.sentinel",
