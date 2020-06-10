@@ -1,10 +1,10 @@
 Now that you have created a policy, you will add some additional restrictions. 
 
-In `terraform-sentine/restrict-s3-buckets.sentinel`{{open}}, add required tags to your policy.
+In your policy file`terraform-sentinel/restrict-s3-buckets.sentinel`{{open}}, you will first add a print statement.
 
 # Create a print statement for debugging
 
-Your policy plan collection contains a lot of data. To see what data you are giving to your policy, create a print statement below your filter statement.
+Your policy plan collection contains a lot of data. To see what data you are giving to your policy, create a print statement below the ending bracket your filter statement.
 
 ```
 print(s3_buckets)
@@ -17,6 +17,8 @@ sentinel apply -trace restrict-s3-buckets.sentinel
 ```{{execute}}
 
 # Create a required tags variable
+
+Copy and paste the `required_tags` variable below your print statement. You are creating a list of variables that are required to be returned from the data you just generated in the previous print statement.
 
 ```
 required_tags = [
@@ -42,7 +44,7 @@ bucket_tags = rule {
 
 # Add an ACL restriction
 
-For S3 buckets, it is considered a good practice to restrict the level of access to the objects to prevent unauthorized editing. Copy this list of allowed ACLs for your S3 bucket and paste it below your `bucket_tags` rule
+For S3 buckets, you should restrict the level of access to the objects to prevent unauthorized editing. Copy this list of allowed ACLs for your S3 bucket and paste it below your `bucket_tags` rule
 
 ```
 allowed_acls = [
@@ -53,7 +55,7 @@ allowed_acls = [
 
 # Add a rule for your ACLs
 
-Copy and paste this rule below your `allowed_acls` to evalute the ACL data in your plan.
+Copy and paste your ACL rule below your `allowed_acls` to evalute the ACL data in your plan.
 
 ```
 acl_allowed = rule {

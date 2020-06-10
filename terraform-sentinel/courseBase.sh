@@ -25,6 +25,8 @@ mv restrict-s3-buckets.sentinel ~/terraform-sentinel
 mv index.html ~/terraform-sentinel/tf-config
 mv main.tf ~/terraform-sentinel/tf-config
 
+cd ~/terraform-sentinel
+
 clear
 
 echo "Ready!"

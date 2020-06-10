@@ -1,6 +1,6 @@
 In this scenario, you will apply the Sentinel logic principles to a Terraform specific deployment.
 
-Navigate to the `terraform-sentinel/tf-config`{{open}} and open the `main.tf` file.
+Navigate to the `terraform-sentinel/tf-config/main.tf`{{open}} and review the configuration you are testing.
 
 This configuration builds an S3 bucket with a unique name and deploys an example web app as a bucket object. You have an S3 bucket policy attached to the bucket resource which allows pubic read permissions for your bucket object. This example configuration does not have any deployment safeguards built in and if your AWS user has S3 build and upload permissions, your Terraform deployment will apply successfully.
 
@@ -45,7 +45,7 @@ Your filter and bucket rule will be evaluated in the main rule. Copy and paste t
 
 ```
 main = rule {
-    bucket_tags else is false
+    bucket_tags else false
 }
 ```{{copy}}
 
