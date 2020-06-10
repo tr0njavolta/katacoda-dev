@@ -1,44 +1,30 @@
 {
   "title": "Sentinel Tutorial",
-  "description": "Writing & Testing Sentinel Policies in the Sentinel CLI and publishing to TFC",
+  "description": "Learn to write and test Sentinel policies for Terraform Cloud infrastructure",
   "time": "30 minutes",
   "icon": "fa-terraform",
   "details": {
     "intro": {
-        "text": "intro.md",
-        "code": "courseBase.sh",
-        "credits": "https://learn.hashicorp.com/terraform"
+      "text": "intro.md",
+      "code": "courseBase.sh",
+      "credits": "https://learn.hashicorp.com/terraform"
     },
-        "assets": {
+    "assets": {
       "host01": [
-        { "file": "test/restrict-s3-buckets/fail.json", "target": "~/" },
-        { "file": "test/restrict-s3-buckets/pass.json", "target": "~/" },
-        { "file": "tf-config/index.html", "target": "~/" },
-        { "file": "tf-config/main.tf", "target": "~/" },
-        { "file": "mock-data/mock-tfconfig-v2.sentinel", "target": "~/" },
-        { "file": "mock-data/mock-tfconfig.sentinel", "target": "~/" },
-        { "file": "mock-data/mock-tfplan-v2.sentinel", "target": "~/" },
-        { "file": "mock-data/mock-tfplan.sentinel", "target": "~/" },
-        { "file": "mock-data/mock-tfrun.sentinel", "target": "~/" },
-        { "file": "mock-data/mock-tfstate-v2.sentinel", "target": "~/" },
-        { "file": "mock-data/mock-tfstate.sentinel", "target": "~/" },
-        { "file": "mock-data/mock-tfplan-fail-v2.sentinel", "target": "~/" },
-        { "file": "mock-data/mock-tfplan-pass-v2.sentinel", "target": "~/" },
-        { "file": "restrict-s3-buckets.sentinel", "target": "~/" },
-        { "file": "sentinel.json", "target": "~/" }
+        { "file": "restrict-s3-buckets.sentinel", "target": "~/" }
       ]
     },
     "steps": [
         {
-          "title": "Your first Sentinel Policy",
+          "title": "Write your first Sentinel policy",
           "text": "step1.md"
         },
         {
-          "title": "Adding additonal requirements",
+          "title": "Add additonal policy requirements",
           "text": "step2.md"
         },
         {
-          "title": "Edit mock data",
+          "title": "Edit mock data to simulate failure scenarios",
           "text": "step3.md"
         },
         {
@@ -53,6 +39,7 @@
   },
   "environment": {
     "uilayout": "editor-terminal",
+    "hideHiddenFiles": true,
     "uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands version 0.1.\u001b[m\r\n"
   },
   "backend": {

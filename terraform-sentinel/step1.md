@@ -1,22 +1,16 @@
-In this scenario, you will apply the Sentinel logic principles to a Terraform specific deployment.
+In this scenario, you will apply the Sentinel Policy-as-Code principles to a Terraform specific deployment. You will create a policy that requires your configuration to have specific tags on your S3 buckets and restrict the level of access to your bucket objects.
 
-Navigate to the `terraform-sentinel/tf-config/main.tf`{{open}} and review the configuration you are testing.
+Open the file `terraform-sentinel/tf-config/main.tf`{{open}} and review the configuration you are testing.
 
-This configuration builds an S3 bucket with a unique name and deploys an example web app as a bucket object. You have an S3 bucket policy attached to the bucket resource which allows pubic read permissions for your bucket object. This example configuration does not have any deployment safeguards built in and if your AWS user has S3 build and upload permissions, your Terraform deployment will apply successfully.
+This configuration builds a publicly-readable S3 bucket with a unique name and deploys an example web app as a bucket object. The `acl` attribute of the `"aws_s3_bucket" "bucket"` resource ensures this web app object is public but the viewer cannot write or edit it.
 
-Proper testing of a policy requires that these values be able to be mocked - or, in other words, simulated in a way that allows the accurate testing of the scenarios that a policy could reasonably pass or fail under.
-
-In order to test this policy, this scenario has pre-generated [mock data from Terraform Cloud](https://www.terraform.io/docs/cloud/sentinel/mock.html). To learn how to generate mock data for testing in the Sentinel CLI, follow the [Sentinel Learn guides on Sentinel & Terraform Cloud](https://www.learn.hashicorp.com/terraform?LINK).
-
-Part of writing Sentinel policies is to determine your parameters based on your infrastructure. For your first policy, you must ensure the following: 
-
-- Any S3 buckets created or updated have at least 1 tag
+For your first policy, create a resource filter for your S3 buckets and a rule that requires that resource to have at least one tag. 
 
 ## Create a filter
 
 The stub of this policy is in `terraform-sentinel/restrict-s3-buckets.sentinel`{{open}}.
 
-The first step in this policy relies on creating a filter for the s3_bucket resources in the Terraform Cloud plan. Copy and paste the filter block below the import statement.
+The first step in this policy relies on creating a filter for the s3_bucket resources in the Terraform Cloud plan. Copy and paste the filter block below the commented line `# Filter S3 buckets`.
 
 ```
 s3_buckets = filter tfplan.resource_changes as _, rc {
@@ -28,7 +22,7 @@ s3_buckets = filter tfplan.resource_changes as _, rc {
 
 ## Create the bucket rule
 
-Your policy has a filter that will search the mock data, but no rule to evaluate this data against. Copy and paste the `bucket_tags` rule to your policy below the filter statement.
+Your policy has a filter that will search the mock data, but no rule to evaluate this data against. Copy and paste the `bucket_tags` rule below the commented line `# Rule to require at least one tag`.
 
 ```
 bucket_tags = rule {
@@ -36,12 +30,13 @@ bucket_tags = rule {
 		buckets.change.after.tags is not null
 		}
 	}
-	```{{copy}}
+```{{copy}}
 
 
 ## Create main rule
 
-Your filter and bucket rule will be evaluated in the main rule. Copy and paste the main rule below your bucket rule.
+Your filter and bucket rule will be evaluated in the main rule. Copy and paste the main rule below the commented line `# Main rule`
+
 
 ```
 main = rule {
@@ -57,7 +52,7 @@ To see Sentinel policy logic in action, run an `apply` with the `trace` flag in 
 sentinel apply -trace restrict-s3-buckets.sentinel
 ```{{execute}}
 
-Review the trace information.
+Review the trace information. You will find that this policy passed because the Terraform plan contained at least one tag and meets the requirements in your `bucket_tags` rule.
 
 ## Create a failing policy
 
@@ -65,13 +60,13 @@ To see the failure behavior of your Sentinel policy, change the `bucket_tags` ru
 
 ```
 bucket_tags = rule {
-	all s3_buckets as _, buckets {
-		buckets.change.after.tags is null
-		}
+all s3_buckets as _, buckets {
+	buckets.change.after.tags is null
 	}
-	```{{copy}}
+}
+```{{copy}}
 
-Run an apply in the Sentinel CLI again and evaluate the output.
+Run an apply in the Sentinel CLI again and evaluate the output. You changed the `bucket_tags` rule to require that NO tags are applied to the S3 bucket. Because your plan information already contains these tags, your policy failed.
 
 ```
 sentinel apply -trace restrict-s3-buckets.sentinel
@@ -81,10 +76,10 @@ After reviewing the failing output, change the `bucket_tags` rule to evaluate co
 
 ```
 bucket_tags = rule {
-	all s3_buckets as _, buckets {
-		buckets.change.after.tags is not null
-		}
+all s3_buckets as _, buckets {
+	buckets.change.after.tags is not null
 	}
-	```{{copy}}
+}
+```{{copy}}
 
 In the next step, you will build on this policy with more specific and restrictive policy information.
