@@ -29,41 +29,4 @@ If you have trouble finding the specific line, search for "<UPDATE_ID>" in the f
 				},
 ```{{copy}}
 
-# Create a failing test file
-
-Now that you have created a plan in which your Sentinel policy will fail, you need to create test file for a failing test.
-
-Open `terraform-sentinel/test/restrict-s3-buckets/fail.json`{{open}} to create a path to the failing mock data.
-
-Copy and paste the relative path to your failing mock in the test file.
-
-```
-{
-  "mock": {
-    "tfplan/v2": "../../mock-data/mock-tfplan-fail-v2.sentinel"
-  },
-```{{copy}}
-
-Review the rest of the test file. This test ensures the main rule will evalute to false.
-
-# Create a passing test file
-Open `terraform-sentinel/test/restrict-s3-buckets/pass.json`{{open}} and create a path to the passing mock data that has already been provided for you.
-
-Copy and paste the relative path to your passing mock in the test file.
-
-```
-{
-  "mock": {
-    "tfplan/v2": "../../mock-data/mock-tfplan-pass-v2.sentinel"
-  },
-```{{copy}}
-
-Review the rest of the test file. This test ensures the main rule will evalute to true.
-
-# Run a test in the Sentinel CLI
-
-In your terminal, run a test with the `verbose` flag
-
-```
-sentinel test -verbose restrict-s3-buckets.sentinel
-```{{execute}}
+Now that you have failing mocked data, the next step will show you how to implement this in your failing tests.
