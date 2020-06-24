@@ -1,0 +1,37 @@
+{
+  "title": "Sentinel Introduction",
+  "description": "Run a Sentinel policy for a Terraform Cloud workspace",
+  "time": "5 minutes",
+  "icon": "fa-terraform",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "code": "courseBase.sh",
+      "credits": "https://learn.hashicorp.com/terraform"
+    },
+    "assets": {
+      "host01": [
+        { "file": "restrict-s3-buckets.sentinel", "target": "~/" }
+      ]
+    },
+    "steps": [
+        {
+          "title": "Run a Sentinel policy",
+          "text": "step1.md"
+        },
+    ]
+    finish": {
+      "text": "finish.md",
+      "credits": "https://learn.hashicorp.com/terraform"
+    }
+  },
+  "environment": {
+    "uilayout": "editor-terminal",
+    "exclusionPatterns": ["Desktop"],
+    "hideHiddenFiles": true,
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands version 0.1.\u001b[m\r\n"
+  },
+  "backend": {
+    "imageid": "hashicorp-hashistack"
+  }
+}
