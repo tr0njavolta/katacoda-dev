@@ -6,7 +6,9 @@ This configuration builds a publicly-readable S3 bucket with a unique name and d
 
 This policy creates a resource filter for your S3 buckets and a rule that requires that resource to have at least one tag. 
 
-## Apply the policy
+## Review the policy
+
+Open the `terraform-sentinel/restrict-s3-buckets.sentinel`{{open}} file and review the policy for this scenario, which requires you to apply at least one tag to any new or updated S3 bucket.
 
 To see Sentinel policy logic in action, run an `apply` with the `trace` flag in your terminal.
 
