@@ -38,7 +38,7 @@ Copy and paste the `required_tags` variable below the `# Rule to require at leas
 
 ```
 required_tags = [
-	"Name",
+    "Name",
     "Environment",
 ]
 ```{{copy}}
@@ -60,7 +60,7 @@ all s3_buckets as _, buckets {
 
 ## Add an ACL restriction
 
-For S3 buckets, AWS allows you to restrict the level of access to the objects to prevent unauthorized editing. Copy this list of allowed ACLs for your S3 bucket and paste it below your `bucket_tags` rule
+Copy this list of allowed ACLs for your S3 bucket and paste it below your `bucket_tags` rule
 
 ```
 allowed_acls = [
