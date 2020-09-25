@@ -10,7 +10,7 @@ unzip sentinel_0.15.5_linux_amd64.zip -d /usr/local/bin/
 sleep 5s
 
 mkdir -p ~/terraform-sentinel
-git clone https://github.com/tr0njavolta/sentinel-demo-katacoda.git ~/terraform-sentinel
+git clone https://github.com/hashicorp/learn-terraform-sentinel ~/terraform-sentinel
 
 mv restrict-s3-buckets.sentinel ~/terraform-sentinel
 
