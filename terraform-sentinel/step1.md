@@ -66,7 +66,7 @@ all s3_buckets as _, buckets {
 }
 ```{{copy}}
 
-Run an apply in the Sentinel CLI again and evaluate the output. You changed the `bucket_tags` rule to require that NO tags are applied to the S3 bucket. Because your plan information already contains these tags, your policy failed.
+Run an apply in the Sentinel CLI again and evaluate the output. Your policy will fail.
 
 ```
 sentinel apply -trace restrict-s3-buckets.sentinel
