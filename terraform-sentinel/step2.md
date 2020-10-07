@@ -18,7 +18,7 @@ sentinel apply -trace restrict-s3-buckets.sentinel
 
 Copy the print statement output from your Sentinel apply, which will begin with `"{aws_bucket.bucket:..."` and end with `"..."type":"aws_s3_bucket")}"`.
 
-Create a new file called `terraform-sentinel/print.json`{{touch}} and paste the print output there.
+Create a new file called `terraform-sentinel/print.json`{{open}} and paste the print output there.
 
 Pipe the contents of this file to a `jq` command in your terminal to make this data easier to read.
 
