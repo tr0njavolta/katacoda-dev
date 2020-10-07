@@ -47,7 +47,8 @@ required_tags = [
 
 Replace the `bucket_tags` rule with a new requirement to compare to your `require_tags` variable.
 
-```bucket_tags = rule {
+```
+bucket_tags = rule {
 all s3_buckets as _, buckets {
 	all required_tags as rt {
 		buckets.change.after.tags contains rt
