@@ -10,7 +10,7 @@ Your mock data contains the ACL for the configuration in the `resource_changes` 
 
 Scroll to line 122 and update the value.
 
-<pre class="file" data-filename="terraform-sentinel/mock-data/mock-tfplan-fail-v2.sentinel" data-target="#ACL">public-read-write</pre>
+<pre class="file" data-filename="terraform-sentinel/mock-data/mock-tfplan-fail-v2.sentinel" data-target="insert" data-marker="#ACL">public-read-write</pre>
 
 ## Edit your mock data tags
 
@@ -18,10 +18,10 @@ To create a failing scenario for your `bucket_tags` rule, replace the tag identi
 
 Scroll to line 133 and edit the `Name` tag key to `Organization`.
 
-<pre class="file" data-filename="terraform-sentinel/mock-data/mock-tfplan-fail-v2.sentinel" data-target="#Name">Organization</pre>
+<pre class="file" data-filename="terraform-sentinel/mock-data/mock-tfplan-fail-v2.sentinel" data-target="insert" data-marker="#Name">Organization</pre>
 
 On line 134, edit the `Environment` tag key to `Workspace`.
 
-<pre class="file" data-filename="terraform-sentinel/mock-data/mock-tfplan-fail-v2.sentinel" data-target="#Environment">Workspace</pre>
+<pre class="file" data-filename="terraform-sentinel/mock-data/mock-tfplan-fail-v2.sentinel" data-target="insert" data-marker="#Environment">Workspace</pre>
 
 Now that you have failing mocked data, the next step will show you how to implement this in your failing tests.
