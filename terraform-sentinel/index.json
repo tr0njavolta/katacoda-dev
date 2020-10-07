@@ -30,10 +30,6 @@
         {
           "title": "Write passing and failing tests",
           "text": "step4.md"
-        },
-        {
-          "title": "Extra Credit - Create a Sentinel module",
-          "text": "extracredit.md"
         }
       ],
     "finish": {
