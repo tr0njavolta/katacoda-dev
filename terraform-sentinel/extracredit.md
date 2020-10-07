@@ -12,7 +12,8 @@ Move your policy to this directory as a new file.
 
 `mv restrict-s3-buckets.sentinel modules/restrict.sentinel`{{execute}}
 
-Remove the main rule.
+Remove the `main` rule and `print` statement.
+
 
 ## Update your module path
 
@@ -56,7 +57,7 @@ Create a new main rule that accesses this module as an import.
 main = rule {
     (restrict.acl_allowed and restrict.bucket_tags) else false
 }
-```
+```{{copy}}
 
 Run your Sentinel `apply` with the new `root.sentinel` file as the target policy.
 
