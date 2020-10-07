@@ -97,7 +97,7 @@ main = rule {
 
 ## Format and apply the policy
 
-Run the fmt command to format your policy for clarity.
+Run the `fmt` command to format your policy for clarity.
 
 ```
 sentinel fmt restrict-s3-buckets.sentinel
