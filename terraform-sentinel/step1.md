@@ -56,15 +56,9 @@ Review the trace information. You will find that this policy passed because the 
 
 ## Create a failing policy
 
-To see the failure behavior of your Sentinel policy, change the `bucket_tags` rule to a `null` statement.
+To test the failure behavior of your Sentinel policy, change the `bucket_tags` rule to a `null` statement.
 
-```
-bucket_tags = rule {
-all s3_buckets as _, buckets {
-	buckets.change.after.tags is null
-	}
-}
-```{{copy}}
+<pre class="file" data-filename="terraform-sentinel/restrict-s3-buckets.sentinel" data-target="buckets.change.after.tags is not null">buckets.change.after.tags is null</pre>
 
 Run an apply in the Sentinel CLI again and evaluate the output. Your policy will fail.
 
@@ -74,12 +68,6 @@ sentinel apply -trace restrict-s3-buckets.sentinel
 
 After reviewing the failing output, change the `bucket_tags` rule to evaluate correctly.
 
-```
-bucket_tags = rule {
-all s3_buckets as _, buckets {
-	buckets.change.after.tags is not null
-	}
-}
-```{{copy}}
+<pre class="file" data-filename="terraform-sentinel/restrict-s3-buckets.sentinel" data-target="buckets.change.after.tags is null">buckets.change.after.tags is not null</pre>
 
 In the next step, you will build on this policy with more specific and restrictive policy information.

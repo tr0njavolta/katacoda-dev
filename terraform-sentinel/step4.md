@@ -19,7 +19,6 @@ Edit the passing mock data path in your test file relative to your `pass.json` f
 
 <pre class="file" data-filename="terraform-sentinel/test/restrict-s3-buckets/pass.json" data-target="<relative_path_to_passing_mock>">../../mock-data/mock-tfplan-pass-v2.sentinel</pre>
 
-
 Review the rest of the test file. This test ensures the main rule will evalute to true.
 
 ## Run a test in the Sentinel CLI
