@@ -45,18 +45,20 @@ required_tags = [
 
 ## Create a rule for your required tags
 
-Edit the `bucket_tags` rule to compare to your `require_tags` variable.
+Replace the `bucket_tags` rule with a new requirement to compare to your `require_tags` variable.
 
-```
+<pre class="file" data-filename="terraform-sentinel/mock-data/mock-tfplan-fail-v2.sentinel" data-target="insert" data-marker="
 bucket_tags = rule {
+    all s3_buckets as _, buckets {
+    buckets.change.after.tags is not null
+    }
+}">bucket_tags = rule {
 all s3_buckets as _, buckets {
 	all required_tags as rt {
 		buckets.change.after.tags contains rt
 		}
 	}
-}
-```{{copy}}
-
+}</pre>
 
 ## Add an ACL restriction
 
@@ -84,13 +86,14 @@ acl_allowed = rule {
 
 ## Edit the main rule to evaluate both rules
 
-Your main rule must evaluate both the `acl_allowed` and `bucket_tags` rule. Copy and paste this as your main rule.
+Your main rule must evaluate both the `acl_allowed` and `bucket_tags` rule. Edit your main rule with these new requirements.
 
-```
+<pre class="file" data-filename="terraform-sentinel/mock-data/mock-tfplan-fail-v2.sentinel" data-target="insert" data-marker="
 main = rule {
+    bucket_tags else false
+}">main = rule {
     (acl_allowed and bucket_tags) else false
-}
-```{{copy}}
+}</pre>
 
 ## Format and apply the policy
 
