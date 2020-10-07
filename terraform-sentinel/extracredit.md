@@ -45,7 +45,7 @@ Open `terraform-sentinel/sentinel.json`{{open}} and add the `modules` path to yo
 
 ## Create a new root policy
 
-Create a new file `terraform-sentinel/root.policy`{{open}} and add the module as an `import` statement.
+Create a new file `terraform-sentinel/root.sentinel`{{open}} and add the module as an `import` statement.
 
 ```
 import "restrict"
