@@ -12,14 +12,13 @@ Move your policy to this directory as a new file.
 
 `mv restrict-s3-buckets.sentinel modules/restrict.sentinel`{{execute}}
 
-Remove the `main` rule and `print` statement.
-
+Remove the `main` rule.
 
 ## Update your module path
 
-You created a new directory to house your modules. Sentinel needs the update your path to this directory in `sentinel.json`
+You created a new directory for your policy modules. Sentinel requires the path to this directory in `sentinel.json` to access it as an import.
 
-Open `terraform-sentinel/sentinel.json`{{open}} and add the `modules` path to your new module under the `mock` paths. Copy and paste the complete file below.
+Open `terraform-sentinel/sentinel.json`{{open}} and add the `modules` path to your new module under the `mock` paths. Replace the contents of this file with the complete file below.
 
 ```
 {
@@ -45,7 +44,7 @@ Open `terraform-sentinel/sentinel.json`{{open}} and add the `modules` path to yo
 
 ## Create a new root policy
 
-Create a new file `terraform-sentinel/root.sentinel`{{open}} and add the module as an `import` statement.
+Create a new policy file `terraform-sentinel/root.sentinel`{{open}} and add the module as an `import` statement.
 
 ```
 import "restrict"
