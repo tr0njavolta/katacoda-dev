@@ -1,4 +1,4 @@
-Now that you have created a policy, you will add some additional restrictions. 
+Now that you have created a policy, you will add some additional restrictions.
 
 Open the policy file `terraform-sentinel/restrict-s3-buckets.sentinel`{{open}}, and add a print statement.
 
@@ -10,13 +10,13 @@ The print statement is a helpful tool for debugging and discovery when you are w
 print(s3_buckets)
 ```{{copy}}
 
-Run your Sentinel CLI apply again to see what data your filter contains. 
+Run your Sentinel CLI apply again to return the filter data in your terminal.
 
 ```
 sentinel apply -trace restrict-s3-buckets.sentinel
 ```{{execute}}
 
-Copy the print statement output from your Sentinel apply, which will begin with `"{aws_bucket.bucket:..."` and end with `"..."type":"aws_s3_bucket")}"`. 
+Copy the print statement output from your Sentinel apply, which will begin with `"{aws_bucket.bucket:..."` and end with `"..."type":"aws_s3_bucket")}"`.
 
 Create a new file called `terraform-sentinel/print.json`{{touch}} and paste the print output there.
 
@@ -92,9 +92,15 @@ main = rule {
 }
 ```{{copy}}
 
-## Apply the policy 
+## Format and apply the policy
 
-Run an apply in the Sentinel CLI again and evaluate the output. You should see that both the `acl_allowed` and `bucket_tags` rules evaluate to true, which allows your `main` rule to evaluate as true and the policy passes.
+Run the fmt command to format your policy for clarity.
+
+```
+sentinel fmt restrict-s3-buckets.sentinel
+```{{execute}}
+
+Close and reopen the `terraform-sentinel/restrict-s3-buckets.sentinel`{{open}} file for your changes to reflect in your editor.
 
 ```
 sentinel apply -trace restrict-s3-buckets.sentinel

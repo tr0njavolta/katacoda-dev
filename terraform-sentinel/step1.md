@@ -4,7 +4,7 @@ Open the file `terraform-sentinel/tf-config/main.tf`{{open}} and review the conf
 
 This configuration builds a publicly-readable S3 bucket with a unique name and deploys an example web app as a bucket object. The `acl` attribute of the `"aws_s3_bucket" "bucket"` resource ensures this web app object is public but the viewer cannot write or edit it.
 
-For your first policy, create a resource filter for your S3 buckets and a rule that requires that resource to have at least one tag. 
+For your first policy, create a resource filter for your S3 buckets and a rule that requires that resource to have at least one tag.
 
 ## Create a filter
 
@@ -46,7 +46,7 @@ main = rule {
 
 ## Apply the policy
 
-To see Sentinel policy logic in action, run an `apply` with the `trace` flag in your terminal.
+Run an `apply` with the `trace` flag in your terminal.
 
 ```
 sentinel apply -trace restrict-s3-buckets.sentinel
