@@ -71,7 +71,7 @@ Functions allow you to create reusable code within your policies. Sentinel has s
 
 Instead of hard-coding a specific resource, you will create a function to find resources based on the type you define.
 
-Create a new file `terraform-sentinel/modules/find_resources.sentinel`. Paste the function below.
+Create a new file `terraform-sentinel/modules/find_resources.sentinel`{{open}}. Paste the function below.
 
 ```
 import "tfplan/v2" as tfplan
