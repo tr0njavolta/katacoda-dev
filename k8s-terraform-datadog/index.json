@@ -9,12 +9,11 @@
     "steps": [{
         "title": "Step 1",
         "text": "step1.md",
-        "code": "step1/code.sh"
       }
     ],
     "intro": {
       "text": "intro.md",
-      "courseData": "intro/courseData.sh"
+      "courseData": "courseData.sh"
     },
     "finish": {
       "text": "finish.md"
