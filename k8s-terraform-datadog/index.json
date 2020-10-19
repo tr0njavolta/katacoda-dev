@@ -4,11 +4,11 @@
   "icon": "fa-terraform",
   "difficulty": "Intermediate",
   "time": "90 minutes",
-  "noindex": true,
   "details": {
-    "steps": [{
+    "steps": [
+      {
         "title": "Step 1",
-        "text": "step1.md",
+        "text": "step1.md"
       }
     ],
     "intro": {
