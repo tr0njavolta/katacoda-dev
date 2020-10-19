@@ -1,0 +1,14 @@
+{
+  "registry.terraform.io/datadog/datadog": {
+    "hash": "h1:k50vaPb9jSLicujZOjdHhAq0hpl9bqoq6sJ4UXtlfx4=",
+    "version": "2.13.0"
+  },
+  "registry.terraform.io/hashicorp/helm": {
+    "hash": "h1:l8zW5Bw3Q4RbNbqyS6SIGKN0KG9WKQFo9gnhxfYV2W8=",
+    "version": "1.3.2"
+  },
+  "registry.terraform.io/hashicorp/kubernetes": {
+    "hash": "h1:PRt9FgsimPmCR+hjG0HRG1ZvZg2DcsRTmrltzQy3mrI=",
+    "version": "1.13.2"
+  }
+}

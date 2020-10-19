@@ -1,0 +1,37 @@
+{
+  "title": "Datadog/k8/Terraform",
+  "description": "Automating Observability Principles with Terraform",
+  "icon": "fa-terraform",
+  "difficulty": "Intermediate",
+  "time": "90 minutes",
+  "noindex": true,
+  "details": {
+    "steps": [{
+        "title": "Step 1",
+        "text": "step1.md",
+        "code": "step1/code.sh"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "courseData": "intro/courseData.sh"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "dashboards": [{
+      "name": "Beacon (after Step 6)",
+      "href": "https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/"
+    }],
+    "hideintro": false,
+    "hideHiddenFiles": true,
+    "showdashboard": true,
+    "uilayout": "editor-terminal",
+    "uieditorpath": "/root/"
+  },
+  "backend": {
+    "imageid": "kubernetes-cluster-running"
+  }
+}
