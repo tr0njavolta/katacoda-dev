@@ -6,7 +6,7 @@
    "noindex":true,
    "details":{
       "intro":{
-         "courseData":"courseData.sh",
+         "code":"courseBase.sh",
          "text":"intro.md"
       },
       "assets":{
