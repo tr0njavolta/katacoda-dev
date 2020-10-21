@@ -18,3 +18,7 @@ Verify your namespace.
 Verify your deployment.
 
 `kubectl get deployment --namespace=beacon`{{execute}}
+
+To view the service in action, click the "View Beacon" tab in the Katacoda scenario or go to [this link](https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/) directly. This will launch another web browser serving the Nginx service.
+
+
