@@ -6,8 +6,7 @@
   "noindex": true,
   "details": {
     "intro": {
-      "text": "intro.md",
-      "courseData": "intro/courseData.sh"
+      "courseData": "setup/courseData.sh"
     },
     "finish": {
       "text": "finish.md"
@@ -18,9 +17,9 @@
       "name": "View Beacon",
       "href": "https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/"
     }],
-    "hideintro": false,
+    "hideintro": true,
     "hideHiddenFiles": true,
-    "showdashboard": true,
+    "showdashboard": false,
     "uilayout": "editor-terminal",
     "uieditorpath": "/root/"
   },
