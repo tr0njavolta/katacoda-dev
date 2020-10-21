@@ -1,4 +1,3 @@
-
 #!/bin/sh
 
 TERRAFORM_VERSION="0.12.29"
