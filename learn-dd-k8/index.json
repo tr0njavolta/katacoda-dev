@@ -6,7 +6,7 @@
    "details":{
       "steps": [{
          "title": "Create your Kubernetes infrastructure",
-         "text": "step1.md",
+         "text": "step1.md"
        },
        {
          "title": "Deploy the Datadog Agent to your nodes with Helm",
@@ -22,12 +22,12 @@
          "title": "Create a synthetic alert with the Datadog provider",
          "text": "step4.md",
          "code": "step4.sh"
-       },
+       }
       ],
       "intro":{
          "code":"courseBase.sh",
          "text":"intro.md"
-      },
+      }
    },
    "environment":{
       "dashboards":[
