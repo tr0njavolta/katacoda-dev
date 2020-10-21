@@ -18,26 +18,6 @@
             {
                "file":"variables.tf",
                "target":"/root/"
-            },
-            {
-               "file":"kubernetes.tf",
-               "target":"/root/"
-            },
-            {
-               "file":"helm_datadog.tf",
-               "target":"/root/"
-            },
-            {
-               "file":"datadog_metrics.tf",
-               "target":"/root/"
-            },
-            {
-               "file":"datadog_synthetics.tf",
-               "target":"/root/"
-            },
-            {
-               "file":"datadog_dashboard.tf",
-               "target":"/root/"
             }
          ]
       }
