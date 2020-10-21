@@ -7,9 +7,6 @@
   "details": {
     "intro": {
       "courseData": "setup/courseData.sh"
-    },
-    "finish": {
-      "text": "finish.md"
     }
   },
   "environment": {
