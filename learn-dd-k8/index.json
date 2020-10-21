@@ -13,7 +13,7 @@
       "host01": [
         {
           "file": "terraform_config/*",
-          "target": "root"
+          "target": "/root/"
         }
       ]
     }
