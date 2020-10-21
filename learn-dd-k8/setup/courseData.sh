@@ -4,7 +4,6 @@
 TERRAFORM_VERSION="0.12.29"
 TERRAFORM_FILE="terraform_${TERRAFORM_VERSION}_linux_amd64.zip"
 HELM_FILE=".helm-installer.sh"
-SCENARIO_WORKSPACE="/tmp/scenario"
 USER_WORKSPACE="/root/"
 
 # install `unzip`
@@ -73,4 +72,4 @@ mkdir \
   -p ${USER_WORKSPACE}
 
 
-cd /root/ && touch kubernetes.tf helm_datadog.tf datadog_metrics.tf datadog_synthetics.tf datadog_dashboard.tf
+cd ${USER_WORKSPACE} && touch kubernetes.tf helm_datadog.tf datadog_metrics.tf datadog_synthetics.tf datadog_dashboard.tf
