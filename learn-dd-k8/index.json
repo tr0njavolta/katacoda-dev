@@ -14,15 +14,18 @@
          "code": "step2.sh"
        },
        {
-         "title": "Deploy the Datadog Agent to your nodes with Helm",
+         "title": "Create a synthetic alert with the Datadog provider",
          "text": "step3.md",
          "code": "step3.sh"
        },
        {
-         "title": "Create a synthetic alert with the Datadog provider",
+         "title": "Create a Datadog dashboard with the Datadog provider",
          "text": "step4.md",
          "code": "step4.sh"
-       }
+       },
+       {
+         "title": "Clean up your resources",
+         "text": "step6.md"       }
       ],
       "intro":{
          "code":"courseBase.sh",
