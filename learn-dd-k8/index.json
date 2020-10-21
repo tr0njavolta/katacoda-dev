@@ -1,60 +1,62 @@
 {
-  "title": "Deploy Datadog monitors with Terraform",
-  "description": "Automating Observability Principles with Terraform",
-  "icon": "fa-terraform",
-  "difficulty": "Intermediate",
-  "noindex": true,
-  "details": {
-    "intro": {
-      "courseData": "setup/courseData.sh",
-      "text": "intro.md"
-    },
-    "assets": {
-      "host01": [
-        {
-          "file": "terraform.tf",
-          "target": "/root/"
-        },
-        {
-          "file": "variables.tf",
-          "target": "/root/"
-        },
-        {
-          "file": "kubernetes.tf",
-          "target": "/root/"
-        },        
-        {
-          "file": "helm_datadog.tf",
-          "target": "/root/"
-        }, 
-        {
-          "file": "datadog_metrics.tf",
-          "target": "/root/"
-        }, 
-        {
-          "file": "datadog_synthetics.tf",
-          "target": "/root/"
-        }, 
-        {
-          "file": "datadog_dashboard.tf",
-          "target": "/root/"
-        }
-      ]
-    }
-  },
-  "environment": {
-    "dashboards": [{
-      "name": "View Beacon",
-      "href": "https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/"
-    }],
-    "hideintro": true,
-    "hideHiddenFiles": true,
-    "showdashboard": false,
-    "hidesidebar": true,
-    "uilayout": "editor-terminal",
-    "uieditorpath": "/root/"
-  },
-  "backend": {
-    "imageid": "kubernetes-cluster-running"
-  }
+   "title":"Deploy Datadog monitors with Terraform",
+   "description":"Automating Observability Principles with Terraform",
+   "icon":"fa-terraform",
+   "difficulty":"Intermediate",
+   "noindex":true,
+   "details":{
+      "intro":{
+         "courseData":"setup/courseData.sh",
+         "text":"intro.md"
+      },
+      "assets":{
+         "host01":[
+            {
+               "file":"terraform.tf",
+               "target":"/root/"
+            },
+            {
+               "file":"variables.tf",
+               "target":"/root/"
+            },
+            {
+               "file":"kubernetes.tf",
+               "target":"/root/"
+            },
+            {
+               "file":"helm_datadog.tf",
+               "target":"/root/"
+            },
+            {
+               "file":"datadog_metrics.tf",
+               "target":"/root/"
+            },
+            {
+               "file":"datadog_synthetics.tf",
+               "target":"/root/"
+            },
+            {
+               "file":"datadog_dashboard.tf",
+               "target":"/root/"
+            }
+         ]
+      }
+   },
+   "environment":{
+      "dashboards":[
+         {
+            "name":"View Beacon",
+            "href":"https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/"
+         }
+      ],
+      "hideintro":true,
+      "hideHiddenFiles":true,
+      "showdashboard":false,
+      "hidesidebar":true,
+      "uilayout":"editor-terminal",
+      "uieditorpath":"/root/"
+   },
+   "backend":{
+      "imageid":"kubernetes-cluster-running"
+   }
 }
