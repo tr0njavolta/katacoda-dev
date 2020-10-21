@@ -13,11 +13,11 @@
          "host01":[
             {
                "file":"terraform.tf",
-               "target":"/workspace/"
+               "target":"~/workspace/"
             },
             {
                "file":"variables.tf",
-               "target":"/workspace/"
+               "target":"~/workspace/"
             }
          ]
       }
@@ -34,7 +34,7 @@
       "showdashboard":false,
       "hidesidebar":true,
       "uilayout":"editor-terminal",
-      "uieditorpath":"/workspace/"
+      "uieditorpath":"~/workspace/"
    },
    "backend":{
       "imageid":"kubernetes-cluster-running"
