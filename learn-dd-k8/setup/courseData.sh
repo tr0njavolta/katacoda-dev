@@ -73,7 +73,4 @@ mkdir \
   -p ${USER_WORKSPACE}
 
 
-git clone https://github.com/tr0njavolta/katacoda-dev.git
-cd katacoda-dev
-cd learn-dd-k8
-cd terraform_config
+cd /root/ && touch kubernetes.tf helm_datadog.tf datadog_metrics.tf datadog_synthetics.tf datadog_dashboard.tf
