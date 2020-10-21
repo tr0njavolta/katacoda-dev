@@ -1,1 +1,1 @@
-cp /tmp/repo/datadog_synthetics.tf ~/workspace/
+cp /tmp/repo/datadog_synthetics.tf /root/

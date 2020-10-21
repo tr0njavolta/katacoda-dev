@@ -20,16 +20,16 @@ helm repo add "datadog" "https://helm.datadoghq.com/"
 helm repo update
 
 # create user workspace
-mkdir -p ~/workspace
+mkdir -p /root/
 mkdir -p /tmp/repo
 
 git clone https://github.com/tr0njavolta/learn-datadog-tf.git /tmp/repo
 
-cp /tmp/repo/variables.tf ~/workspace
-cp /tmp/repo/terraform.tf ~/workspace
-cp /tmp/repo/kubernetes.tf ~/workspace
+cp /tmp/repo/variables.tf /root/
+cp /tmp/repo/terraform.tf /root/
+cp /tmp/repo/kubernetes.tf /root/
 
-cd ~/workspace/
+cd /root/
 
 clear
 

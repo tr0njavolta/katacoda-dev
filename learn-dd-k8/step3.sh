@@ -1,1 +1,1 @@
-cp /tmp/repo/datadog_metrics.tf ~/workspace/
+cp /tmp/repo/datadog_metrics.tf /root/

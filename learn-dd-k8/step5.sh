@@ -1,1 +1,1 @@
-cp /tmp/repo/datadog_dashboard.tf ~/workspace/
+cp /tmp/repo/datadog_dashboard.tf /root/

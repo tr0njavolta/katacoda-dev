@@ -40,7 +40,7 @@
       "hideHiddenFiles":true,
       "showdashboard":true,
       "uilayout":"editor-terminal",
-      "uieditorpath":"~/workspace/"
+      "uieditorpath":"/root/"
    },
    "backend":{
       "imageid":"kubernetes-cluster-running"
