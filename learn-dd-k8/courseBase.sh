@@ -21,7 +21,12 @@ helm repo update
 
 # create user workspace
 mkdir -p ~/workspace
+mkdir -p /tmp/repo
 
-cd ~/workspace && touch kubernetes.tf helm_datadog.tf datadog_metrics.tf datadog_synthetics.tf datadog_dashboard.tf
+git clone https://github.com/tr0njavolta/learn-datadog-tf.git /tmp/repo
+
+cp /tmp/repo/variables.tf ~/workspace
+cp /tmp/repo/terraform.tf ~/workspace
+cp /tmp/repo/kubernetes.tf ~/workspace
 
 echo "Ready!"
