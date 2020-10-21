@@ -8,6 +8,14 @@
     "intro": {
       "courseData": "setup/courseData.sh",
       "text": "intro.md"
+    },
+       "assets": {
+      "host01": [
+        {
+          "file": "terraform_config/*",
+          "target": "root"
+        }
+      ]
     }
   },
   "environment": {
