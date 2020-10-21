@@ -3,7 +3,6 @@
    "description":"Automating Observability Principles with Terraform",
    "icon":"fa-terraform",
    "difficulty":"Intermediate",
-   "noindex":true,
    "details":{
       "intro":{
          "code":"courseBase.sh",
