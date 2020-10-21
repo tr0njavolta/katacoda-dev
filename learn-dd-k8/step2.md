@@ -1,4 +1,4 @@
-Open the `~/workspace/helm_datadog.tf`{{execute}} file. This file contains the resources and metadata for your nodes to report to Datadog. Review the configuration below.
+Open the `~/workspace/helm_datadog.tf`{{open}} file. This file contains the resources and metadata for your nodes to report to Datadog. Review the configuration below.
 
 This Helm configuration requires your Datadog API and application keys. Set these values as environment variables in the Katacoda terminal.
 
