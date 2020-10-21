@@ -1,74 +1,28 @@
-#!/bin/sh
-
-TERRAFORM_VERSION="0.12.29"
-TERRAFORM_FILE="terraform_${TERRAFORM_VERSION}_linux_amd64.zip"
-HELM_FILE=".helm-installer.sh"
-USER_WORKSPACE="/root/"
-
 # install `unzip`
-apt-get \
-  install \
-    --quiet \
-    --yes \
-    "unzip"
+apt-get install --quiet --yes "unzip"
 
 # fetch Terraform archive
-curl \
-  --remote-name \
-  "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/${TERRAFORM_FILE}"
+curl "https://releases.hashicorp.com/terraform/0.12.9/terraform_0.12.9_linux_amd64.zip"
 
 # unzip Terraform archive and make it accessible in PATH
-unzip \
-  "${TERRAFORM_FILE}" \
-  -d "/usr/local/bin/"
+unzip terraform_0.12.9_linux_amd64.zip -d "/usr/local/bin/"
 
 # clean up
-rm \
-  --recursive \
-  --force \
-  ${TERRAFORM_FILE}
+rm --recursive  --force terraform_0.12.9_linux_amd64.zip
 
-## install Helm
-#curl \
-#  --fail \
-#  --location \
-#  --show-error \
-#  --output "${HELM_FILE}" \
-#  --silent \
-#  "https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3" \
-#&& \
-#chmod 700 "${HELM_FILE}" \
-#&& \
-#./${HELM_FILE} \
-#
-## clean up Helm installer
-#rm \
-#  --recursive \
-#  --force \
-#  ${HELM_FILE}
+# helm init
+helm init
 
-# initialize Helm
-helm \
-  init
-
-## add `stable` Helm Charts (this provides `stable/datadog:2.3.42`)
-#helm \
-#  repo \
-#    add "stable" "https://kubernetes-charts.storage.googleapis.com/"
 
 # add `datadog` Helm Charts (this provides `datadog/datadog:2.4.5`)
-helm \
-  repo \
-    add "datadog" "https://helm.datadoghq.com/"
+helm repo add "datadog" "https://helm.datadoghq.com/"
 
 # update Helm Charts
-helm \
-  repo \
-    update
+helm repo update
 
 # create user workspace
-mkdir \
-  -p ${USER_WORKSPACE}
+mkdir -p workspace
 
+cd workspace && touch kubernetes.tf helm_datadog.tf datadog_metrics.tf datadog_synthetics.tf datadog_dashboard.tf
 
-cd ${USER_WORKSPACE} && touch kubernetes.tf helm_datadog.tf datadog_metrics.tf datadog_synthetics.tf datadog_dashboard.tf
+echo "Ready!"
