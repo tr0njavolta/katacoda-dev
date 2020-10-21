@@ -38,7 +38,7 @@
         {
           "file": "datadog_dashboard.tf",
           "target": "/root/"
-        }, 
+        }
       ]
     }
   },
