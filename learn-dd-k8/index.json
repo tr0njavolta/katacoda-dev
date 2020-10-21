@@ -29,7 +29,7 @@
             "href":"https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/"
          }
       ],
-      "hideintro":true,
+      "hideintro":false,
       "hideHiddenFiles":true,
       "showdashboard":false,
       "hidesidebar":true,
