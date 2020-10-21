@@ -4,7 +4,6 @@
 TERRAFORM_VERSION="0.12.29"
 TERRAFORM_FILE="terraform_${TERRAFORM_VERSION}_linux_amd64.zip"
 HELM_FILE=".helm-installer.sh"
-SCENARIO_REPOSITORY="https://github.com/ksatirli/katacoda-scenarios.git"
 SCENARIO_WORKSPACE="/tmp/scenario"
 USER_WORKSPACE="/root/"
 
@@ -72,3 +71,9 @@ helm \
 # create user workspace
 mkdir \
   -p ${USER_WORKSPACE}
+
+
+git clone https://github.com/tr0njavolta/katacoda-dev.git
+cd katacoda-dev
+cd learn-dd-k8
+cd terraform_config
