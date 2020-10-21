@@ -29,4 +29,8 @@ cp /tmp/repo/variables.tf ~/workspace
 cp /tmp/repo/terraform.tf ~/workspace
 cp /tmp/repo/kubernetes.tf ~/workspace
 
+cd ~/workspace/
+
+clear
+
 echo "Ready!"
