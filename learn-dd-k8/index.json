@@ -9,12 +9,36 @@
       "courseData": "setup/courseData.sh",
       "text": "intro.md"
     },
-       "assets": {
+    "assets": {
       "host01": [
         {
-          "file": "terraform_config/*",
+          "file": "terraform_config/terraform.tf",
           "target": "/root/"
-        }
+        },
+        {
+          "file": "terraform_config/variables.tf",
+          "target": "/root/"
+        },
+        {
+          "file": "terraform_config/kubernetes.tf",
+          "target": "/root/"
+        },        
+        {
+          "file": "terraform_config/helm_datadog.tf",
+          "target": "/root/"
+        }, 
+        {
+          "file": "terraform_config/datadog_metrics.tf",
+          "target": "/root/"
+        }, 
+        {
+          "file": "terraform_config/datadog_synthetics.tf",
+          "target": "/root/"
+        }, 
+        {
+          "file": "terraform_config/datadog_dashboard.tf",
+          "target": "/root/"
+        }, 
       ]
     }
   },
