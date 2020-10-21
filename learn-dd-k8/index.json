@@ -38,7 +38,7 @@
       ],
       "hideintro":false,
       "hideHiddenFiles":true,
-      "showdashboard":false,
+      "showdashboard":true,
       "uilayout":"editor-terminal",
       "uieditorpath":"~/workspace/"
    },
