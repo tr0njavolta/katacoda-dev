@@ -12,31 +12,31 @@
     "assets": {
       "host01": [
         {
-          "file": "terraform_config/terraform.tf",
+          "file": "terraform.tf",
           "target": "/root/"
         },
         {
-          "file": "terraform_config/variables.tf",
+          "file": "variables.tf",
           "target": "/root/"
         },
         {
-          "file": "terraform_config/kubernetes.tf",
+          "file": "kubernetes.tf",
           "target": "/root/"
         },        
         {
-          "file": "terraform_config/helm_datadog.tf",
+          "file": "helm_datadog.tf",
           "target": "/root/"
         }, 
         {
-          "file": "terraform_config/datadog_metrics.tf",
+          "file": "datadog_metrics.tf",
           "target": "/root/"
         }, 
         {
-          "file": "terraform_config/datadog_synthetics.tf",
+          "file": "datadog_synthetics.tf",
           "target": "/root/"
         }, 
         {
-          "file": "terraform_config/datadog_dashboard.tf",
+          "file": "datadog_dashboard.tf",
           "target": "/root/"
         }, 
       ]
