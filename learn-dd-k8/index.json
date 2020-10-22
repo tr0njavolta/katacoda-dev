@@ -48,6 +48,7 @@
       "hideintro":false,
       "hideHiddenFiles":true,
       "showdashboard":true,
+      "exclusionPatterns": ["/root/Desktop"]
       "uilayout":"editor-terminal",
       "uieditorpath":"/root/"
    },
