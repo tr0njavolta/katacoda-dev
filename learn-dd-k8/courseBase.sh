@@ -28,8 +28,6 @@ cp /tmp/repo/kubernetes.tf /root/
 
 cd /root/
 
-minikube start
-
 clear
 
 echo "Ready!"
