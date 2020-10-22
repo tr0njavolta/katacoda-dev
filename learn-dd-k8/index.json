@@ -1,6 +1,6 @@
 {
    "title":"Deploy Datadog monitors with Terraform",
-   "description":"Automating Observability Principles with Terraform",
+   "description":"Automate Datadog deployments with Terraform",
    "icon":"fa-terraform",
    "difficulty":"Intermediate",
    "details":{
@@ -30,7 +30,7 @@
        },
        {
          "title": "Clean up your resources",
-         "text": "step6.md"       
+         "text": "step6.md"
        }
       ],
       "intro":{
@@ -48,7 +48,7 @@
       "hideintro":false,
       "hideHiddenFiles":true,
       "showdashboard":true,
-      "exclusionPatterns":["/root/Desktop"]
+      "exclusionPatterns":["/root/Desktop", "root/go"],
       "uilayout":"editor-terminal",
       "uieditorpath":"/root/"
    },
