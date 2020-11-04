@@ -28,6 +28,6 @@ cp /tmp/repo/kubernetes.tf /root/
 
 cd /root/
 
-clear
+# clear
 
 echo "Ready!"
