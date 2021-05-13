@@ -18,9 +18,9 @@ Remove the `main` rule.
 
 ## Update your module path
 
-You created a new directory for your policy modules. Sentinel requires the path to this directory in `sentinel.json` to access it as an import.
+You created a new directory for your policy modules. Sentinel requires the path to this directory in `sentinel.hcl` to access it as an import.
 
-Open `terraform-sentinel/sentinel.json`{{open}} and add the `modules` path to your new module under the `mock` paths. Replace the contents of this file with the complete file below.
+Open `terraform-sentinel/sentinel.hcl`{{open}} and add the `modules` path to your new module under the `mock` paths. Replace the contents of this file with the complete file below.
 
 ```
 {
@@ -134,7 +134,7 @@ This module does several things:
 
 ## Update your configuration file
 
-Open `terraform-sentinel/sentinel.json`{{open}} to add the paths for your new files.
+Open `terraform-sentinel/sentinel.hcl`{{open}} to add the paths for your new files.
 
 Replace the contents of this file with the paths below.
 
