@@ -23,24 +23,14 @@ You created a new directory for your policy modules. Sentinel requires the path 
 Open `terraform-sentinel/sentinel.hcl`{{open}} and add the `modules` path to your new module under the `mock` paths. Replace the contents of this file with the complete file below.
 
 ```
-{
-  "mock": {
-    "tfconfig": "mock-data/mock-tfconfig.sentinel",
-    "tfconfig/v1": "mock-data/mock-tfconfig.sentinel",
-    "tfconfig/v2": "mock-data/mock-tfconfig-v2.sentinel",
-    "tfplan": "mock-data/mock-tfplan.sentinel",
-    "tfplan/v1": "mock-data/mock-tfplan.sentinel",
-    "tfplan/v2": "mock-data/mock-tfplan-v2.sentinel",
-    "tfrun": "mock-data/mock-tfrun.sentinel",
-    "tfstate": "mock-data/mock-tfstate.sentinel",
-    "tfstate/v1": "mock-data/mock-tfstate.sentinel",
-    "tfstate/v2": "mock-data/mock-tfstate-v2.sentinel"
-  },
-  "modules": {
-    "restrict": {
-      "path": "modules/restrict.sentinel"
-    }
+mock "tfplan/v2" {
+  module {
+    source = "mock-data/mock-tfplan-v2.sentinel"
   }
+}
+
+module "restrict" {
+  source = "./modules/restrict.sentinel"
 }
 ```{{copy}}
 
@@ -139,27 +129,19 @@ Open `terraform-sentinel/sentinel.hcl`{{open}} to add the paths for your new fil
 Replace the contents of this file with the paths below.
 
 ```
-{
-  "mock": {
-    "tfconfig": "mock-data/mock-tfconfig.sentinel",
-    "tfconfig/v1": "mock-data/mock-tfconfig.sentinel",
-    "tfconfig/v2": "mock-data/mock-tfconfig-v2.sentinel",
-    "tfplan": "mock-data/mock-tfplan.sentinel",
-    "tfplan/v1": "mock-data/mock-tfplan.sentinel",
-    "tfplan/v2": "mock-data/mock-tfplan-v2.sentinel",
-    "tfrun": "mock-data/mock-tfrun.sentinel",
-    "tfstate": "mock-data/mock-tfstate.sentinel",
-    "tfstate/v1": "mock-data/mock-tfstate.sentinel",
-    "tfstate/v2": "mock-data/mock-tfstate-v2.sentinel"
-  },
-  "modules": {
-    "find_resources": {
-      "path": "modules/find_resources.sentinel"
-    },
-    "buckets": {
-      "path": "modules/buckets.sentinel"
-    }
+mock "tfplan/v2" {
+  module {
+    source = "mock-data/mock-tfplan-v2.sentinel"
   }
+}
+
+module "find_resources" {
+  source = "./modules/find_resources.sentinel"
+}
+
+
+module "buckets" {
+  source = "./modules/buckets.sentinel"
 }```{{copy}}
 
 You have two module paths for Sentinel to access now.
