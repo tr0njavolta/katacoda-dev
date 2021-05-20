@@ -9,6 +9,6 @@ unzip sentinel_0.18.2_linux_amd64.zip
 
 rm /usr/local/bin/sentinel
 
-mv sentinel /user/local/bin/
+mv sentinel /usr/local/bin/
 
 echo "Ready!"
