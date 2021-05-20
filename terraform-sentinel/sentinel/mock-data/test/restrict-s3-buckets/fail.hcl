@@ -1,6 +1,6 @@
 mock "tfplan/v2" {
   module {
-    source = "../../mock-tfplan-fail-v2.sentinel"
+    source = "<relative_path_to_failing_mock>"
   }
 }
 
