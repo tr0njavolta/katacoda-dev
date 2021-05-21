@@ -11,4 +11,6 @@ rm /usr/local/bin/sentinel
 
 mv sentinel /usr/local/bin/
 
+clear
+
 echo "Ready!"
