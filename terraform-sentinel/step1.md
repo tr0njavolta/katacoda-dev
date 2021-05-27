@@ -10,15 +10,13 @@ For your first policy, create a resource filter for your S3 buckets and a rule t
 
 Open the stub of this policy in `terraform-sentinel/restrict-s3-buckets.sentinel`{{open}}.
 
-Create a filter for the s3_bucket resources in the Terraform Cloud plan. Copy and paste the filter block below the commented line `# Filter S3 buckets`.
 
-```
+<pre class="file" data-filename="terraform-sentinel/restrict-s3-buckets.sentinel" data-target="insert" data-marker="# Filter S3 buckets">
+# Filter S3 buckets
 s3_buckets = filter tfplan.resource_changes as _, rc {
 	rc.type is "aws_s3_bucket" and
 	(rc.change.actions contains "create" or rc.change.actions is ["update"])
-}
-```{{copy}}
-
+}</pre>
 
 ## Create the bucket rule
 
