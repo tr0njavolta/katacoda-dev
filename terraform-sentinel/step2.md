@@ -101,8 +101,7 @@ Copy and paste your ACL rule below your `allowed_acls` to evalute the ACL data i
 <pre class="file" data-filename="terraform-sentinel/restrict-s3-buckets.sentinel" data-target="insert" data-marker="allowed_acls = [
 	"public-read",
 	"private",
-]
-">
+]">
 
 allowed_acls = [
 	"public-read",
@@ -115,9 +114,7 @@ acl_allowed = rule {
 	all s3_buckets as _, buckets {
 	buckets.change.after.acl in allowed_acls
 	}
-}
-
-</pre>
+}</pre>
 
 
 ## Edit the main rule to evaluate both rules
