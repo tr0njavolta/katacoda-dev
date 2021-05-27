@@ -43,6 +43,7 @@ main = rule {
     bucket_tags else false
 }</pre>
 
+
 ## Apply the policy
 
 Run an `apply` with the `trace` flag in your terminal.
