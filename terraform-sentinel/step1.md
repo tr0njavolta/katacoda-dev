@@ -26,6 +26,7 @@ Add a rule to evaluate mock data. Copy and paste the `bucket_tags` rule below th
 
 <pre class="file" data-filename="terraform-sentinel/restrict-s3-buckets.sentinel" data-target="insert" data-marker="# Rule to require at least one tag">
 # Rule to require at least one tag
+bucket_tags = rule {
 	all s3_buckets as _, buckets {
 	buckets.change.after.tags is not null
 	}
