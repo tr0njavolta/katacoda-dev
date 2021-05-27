@@ -98,15 +98,10 @@ allowed_acls = [
 
 Copy and paste your ACL rule below your `allowed_acls` to evalute the ACL data in your plan.
 
-<pre class="file" data-filename="terraform-sentinel/restrict-s3-buckets.sentinel" data-target="insert" data-marker="allowed_acls = [
+<pre class="file" data-filename="terraform-sentinel/restrict-s3-buckets.sentinel" data-target="append" data-marker="allowed_acls = [
 	"public-read",
 	"private",
 ]">
-
-allowed_acls = [
-	"public-read",
-	"private",
-]
 
 # Restrict allowed ACL
 
