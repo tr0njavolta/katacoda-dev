@@ -71,7 +71,7 @@ Create a new file `terraform-sentinel/modules/find_resources.sentinel`{{open}}. 
 import "tfplan/v2" as tfplan
 
 find_resources = func(type) {
-  resources = filter tfplan.resource_changes as _, rc {
+  resources = filter tfplan.resource_changes as _, rc {/
     rc.type is type and
   	rc.mode is "managed" and
   	(rc.change.actions contains "create" or rc.change.actions contains "update")
