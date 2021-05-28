@@ -1,7 +1,5 @@
 Now that you have created a policy, you will add some additional restrictions.
 
-Open the policy file `terraform-sentinel/restrict-s3-buckets.sentinel`{{open}}, and add a print statement.
-
 ## Create a print statement for debugging
 
 The print statement is a helpful tool for debugging and discovery when you are writing policies. Click "Copy to Editor" to add the print statement to your policy.
@@ -33,7 +31,7 @@ Remove the print statement from your policy once you have reviewed the output.
 
 ## Create a required tags variable
 
-Open the policy file `terraform-sentinel/restrict-s3-buckets.sentinel`{{open}} again. Click the "Copy to Editor" button to add the `required_tags` variable into your policy. You are creating a list of variables that must be returned from the data you just generated in the previous print statement.
+You will add a new variable to your `terraform-sentinel/restrict-s3-buckets.sentinel`{{open}} policy. Click the "Copy to Editor" button to add the `required_tags` variable into your policy. You are creating a list of variables that must be returned from the data you just generated in the previous print statement.
 
 <pre class="file" data-filename="terraform-sentinel/restrict-s3-buckets.sentinel" data-target="insert" data-marker="# Rule to require at least one tag">
 
