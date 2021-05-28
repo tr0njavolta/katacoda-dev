@@ -62,10 +62,10 @@ The function you will create in this section will replace the `s3_buckets` filte
 
 Create a new file `terraform-sentinel/modules/find_resources.sentinel`{{open}}. Paste the function below.
 
-<pre class="file" data-filename="terraform-sentinel/find_resources.sentinel" data-target="append" >"import "tfplan/v2" as tfplan
+<pre class="file" data-filename="terraform-sentinel/find_resources.sentinel" data-target="append" >import "tfplan/v2" as tfplan
 
 find_resources = func(type) {
-  resources = filter tfplan.resource_changes as _, rc {/
+  resources = filter tfplan.resource_changes as _, rc {
     rc.type is type and
   	rc.mode is "managed" and
   	(rc.change.actions contains "create" or rc.change.actions contains "update")
@@ -82,7 +82,7 @@ This function is not accessed anywhere yet. Instead of hard-coding the resource 
 
 Open `terraform-sentinel/modules/buckets.sentinel`{{open}} and paste the module below.
 
-<pre class="file" data-filename="terraform-sentinel/buckets.sentinel" data-target="append" >"import "find_resources"
+<pre class="file" data-filename="terraform-sentinel/buckets.sentinel" data-target="append" >import "find_resources"
 
 found_buckets = find_resources.find_resources("aws_s3_bucket")
 

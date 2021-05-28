@@ -75,7 +75,7 @@ all s3_buckets as _, buckets {
 Copy this list of allowed ACLs for your S3 bucket and paste it below your `bucket_tags` rule
 
 <pre class="file" data-filename="terraform-sentinel/restrict-s3-buckets.sentinel" data-target="insert" data-marker="# ACL restriction
-">bucket_tags = rule {
+"># ACL restriction
 
 allowed_acls = [
 	"public-read",
