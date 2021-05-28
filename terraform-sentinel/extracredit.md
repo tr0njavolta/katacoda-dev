@@ -20,7 +20,7 @@ Remove the `main` rule.
 
 You created a new directory for your policy modules. Sentinel requires the path to this directory in `sentinel.hcl` to access it as an import.
 
-Open `terraform-sentinel/sentinel.hcl`{{open}} and add the `modules` path to your new module under the `mock` paths. Replace the contents of this file with the complete file below.
+Open `terraform-sentinel/sentinel.hcl`{{open}} and add the `modules` path to your new module under the `mock` paths. Replace the contents of this file with the complete file below by clicking "Copy to Editor."
 
 <pre class="file" data-filename="terraform-sentinel/sentinel.hcl" data-target="replace" >mock "tfplan/v2" {
   module {
@@ -35,11 +35,11 @@ module "restrict" {
 
 ## Create a new root policy
 
-Create a new policy file `terraform-sentinel/root.sentinel`{{open}} and add the module as an `import` statement.
+Create a new policy file `terraform-sentinel/root.sentinel`{{open}} and add the module as an `import` statement by clicking "Copy to Editor."
 
 <pre class="file" data-filename="terraform-sentinel/root.sentinel" data-target="append" >import "restrict"</pre>
 
-Create a new main rule that accesses this module as an import.
+Create a new main rule that accesses this module as an import by clicking "Copy to Editor."
 
 <pre class="file" data-filename="terraform-sentinel/root.sentinel" data-target="append" >main = rule {
     (restrict.acl_allowed and restrict.bucket_tags) else false
@@ -60,7 +60,7 @@ Instead of hard-coding a specific resource, you will create a function to find r
 
 The function you will create in this section will replace the `s3_buckets` filter with a function to search for any resource you define and then call that function in other policies.
 
-Create a new file `terraform-sentinel/modules/find_resources.sentinel`{{open}}. Paste the function below.
+Create a new file `terraform-sentinel/modules/find_resources.sentinel`{{open}}. Add the function below by clicking "Copy to Editor."
 
 <pre class="file" data-filename="terraform-sentinel/find_resources.sentinel" data-target="append" >import "tfplan/v2" as tfplan
 
@@ -80,7 +80,7 @@ This function iterates over a filter, but takes a `type` argument that you can a
 
 This function is not accessed anywhere yet. Instead of hard-coding the resource type into your policy, create a new module.
 
-Open `terraform-sentinel/modules/buckets.sentinel`{{open}} and paste the module below.
+Open `terraform-sentinel/modules/buckets.sentinel`{{open}} and add the module below by clicking "Copy to Editor."
 
 <pre class="file" data-filename="terraform-sentinel/buckets.sentinel" data-target="append" >import "find_resources"
 
@@ -121,7 +121,7 @@ This module does several things:
 
 Open `terraform-sentinel/sentinel.hcl`{{open}} to add the paths for your new files.
 
-Replace the contents of this file with the paths below.
+Replace the contents of this file with the paths below by clicking "Copy to Editor."
 
 <pre class="file" data-filename="terraform-sentinel/sentinel.hcl" data-target="replace" >mock "tfplan/v2" {
   module {
@@ -142,7 +142,7 @@ You have two module paths for Sentinel to access now.
 
 ## Update your root rule
 
-Open `terraform-sentinel/root.sentinel`{{open}} and replace the contents with the information below.
+Open `terraform-sentinel/root.sentinel`{{open}} and replace the contents with the information below by clicking "Copy to Editor."
 
 <pre class="file" data-filename="terraform-sentinel/root.sentinel" data-target="replace" >import "buckets"
 
