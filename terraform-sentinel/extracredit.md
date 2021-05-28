@@ -22,8 +22,8 @@ You created a new directory for your policy modules. Sentinel requires the path 
 
 Open `terraform-sentinel/sentinel.hcl`{{open}} and add the `modules` path to your new module under the `mock` paths. Replace the contents of this file with the complete file below.
 
-```
-mock "tfplan/v2" {
+
+<pre class="file" data-filename="terraform-sentinel/sentinel.hcl" data-target="replace" data-marker=mock "tfplan/v2" {
   module {
     source = "mock-data/mock-tfplan-v2.sentinel"
   }
@@ -31,23 +31,23 @@ mock "tfplan/v2" {
 
 module "restrict" {
   source = "./modules/restrict.sentinel"
-}
-```{{copy}}
+}</pre>
+
 
 ## Create a new root policy
 
 Create a new policy file `terraform-sentinel/root.sentinel`{{open}} and add the module as an `import` statement.
 
-```
-import "restrict"
-```{{copy}}
+<pre class="file" data-filename="terraform-sentinel/root.sentinel" data-target="append" data-marker=import "restrict"</pre>
+
 
 Create a new main rule that accesses this module as an import.
 
-```
-main = rule {
+<pre class="file" data-filename="terraform-sentinel/root.sentinel" data-target="append" data-marker=main = rule {
     (restrict.acl_allowed and restrict.bucket_tags) else false
-}
+}</pre>
+
+
 ```{{copy}}
 
 Run your Sentinel `apply` with the new `root.sentinel` file as the target policy.
@@ -67,7 +67,7 @@ The function you will create in this section will replace the `s3_buckets` filte
 
 Create a new file `terraform-sentinel/modules/find_resources.sentinel`{{open}}. Paste the function below.
 
-<pre class="file" data-filename="terraform-sentinel/restrict-s3-buckets.sentinel" data-target="append" data-marker="import "tfplan/v2" as tfplan
+<pre class="file" data-filename="terraform-sentinel/find_resources.sentinel" data-target="append" data-marker="import "tfplan/v2" as tfplan
 
 find_resources = func(type) {
   resources = filter tfplan.resource_changes as _, rc {/
@@ -88,7 +88,7 @@ This function is not accessed anywhere yet. Instead of hard-coding the resource 
 Open `terraform-sentinel/modules/buckets.sentinel`{{open}} and paste the module below.
 
 
-<pre class="file" data-filename="terraform-sentinel/restrict-s3-buckets.sentinel" data-target="append" data-marker="import "find_resources"
+<pre class="file" data-filename="terraform-sentinel/buckets.sentinel" data-target="append" data-marker="import "find_resources"
 
 found_buckets = find_resources.find_resources("aws_s3_bucket")
 
@@ -150,7 +150,7 @@ You have two module paths for Sentinel to access now.
 
 Open `terraform-sentinel/root.sentinel`{{open}} and replace the contents with the information below.
 
-<pre class="file" data-filename="terraform-sentinel/sentinel.hcl" data-target="replace" data-marker=import "buckets"
+<pre class="file" data-filename="terraform-sentinel/root.sentinel" data-target="replace" data-marker=import "buckets"
 
 main = rule {
     (buckets.acl_allowed and buckets.bucket_tags) else false

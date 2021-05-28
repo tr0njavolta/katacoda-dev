@@ -39,7 +39,6 @@ Your filter and bucket rule will be evaluated in the main rule. Copy and paste t
 
 <pre class="file" data-filename="terraform-sentinel/restrict-s3-buckets.sentinel" data-target="insert" data-marker="# Main rule that requires other rules to be true">
 # Main rule that requires other rules to be true
-
 main = rule {
     bucket_tags else false
 }</pre>

@@ -122,16 +122,13 @@ acl_allowed = rule {
 Your main rule must evaluate both the `acl_allowed` and `bucket_tags` rule. Edit your main rule with these new requirements.
 
 <pre class="file" data-filename="terraform-sentinel/restrict-s3-buckets.sentinel" data-target="insert" data-marker="# Main rule that requires other rules to be true
-
 main = rule {
     bucket_tags else false
 }
 "># Main rule that requires other rules to be true
-
 main = rule {
     (acl_allowed and bucket_tags) else false
 }
-
 </pre>
 
 ## Format and apply the policy
