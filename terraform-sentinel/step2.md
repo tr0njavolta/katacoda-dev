@@ -65,6 +65,8 @@ all s3_buckets as _, buckets {
         }
     }
 }
+
+# ACL restriction
 </pre>
 
 
@@ -72,25 +74,15 @@ all s3_buckets as _, buckets {
 
 Copy this list of allowed ACLs for your S3 bucket and paste it below your `bucket_tags` rule
 
-<pre class="file" data-filename="terraform-sentinel/restrict-s3-buckets.sentinel" data-target="insert" data-marker="bucket_tags = rule {
-all s3_buckets as _, buckets {
-    all required_tags as rt {
-        buckets.change.after.tags contains rt
-        }
-    }
-}
+<pre class="file" data-filename="terraform-sentinel/restrict-s3-buckets.sentinel" data-target="insert" data-marker="# ACL restriction
 ">bucket_tags = rule {
-all s3_buckets as _, buckets {
-    all required_tags as rt {
-        buckets.change.after.tags contains rt
-        }
-    }
-}
 
 allowed_acls = [
 	"public-read",
 	"private",
 ]
+
+# ACL restriction rule
 
 </pre>
 
@@ -98,17 +90,9 @@ allowed_acls = [
 
 Copy and paste your ACL rule below your `allowed_acls` to evalute the ACL data in your plan.
 
-<pre class="file" data-filename="terraform-sentinel/restrict-s3-buckets.sentinel" data-target="insert" data-marker="allowed_acls = [
-	"public-read",
-	"private",
-]">
+<pre class="file" data-filename="terraform-sentinel/restrict-s3-buckets.sentinel" data-target="insert" data-marker="# ACL restriction rule">
 
-# Restrict allowed ACL
-
-allowed_acls = [
-	"public-read",
-	"private",
-]
+# ACL restriction rule
 
 acl_allowed = rule {
 	all s3_buckets as _, buckets {

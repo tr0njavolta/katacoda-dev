@@ -39,15 +39,11 @@ Create a new policy file `terraform-sentinel/root.sentinel`{{open}} and add the 
 
 <pre class="file" data-filename="terraform-sentinel/root.sentinel" data-target="append" >import "restrict"</pre>
 
-
 Create a new main rule that accesses this module as an import.
 
 <pre class="file" data-filename="terraform-sentinel/root.sentinel" data-target="append" >main = rule {
     (restrict.acl_allowed and restrict.bucket_tags) else false
 }</pre>
-
-
-```{{copy}}
 
 Run your Sentinel `apply` with the new `root.sentinel` file as the target policy.
 
@@ -85,7 +81,6 @@ This function iterates over a filter, but takes a `type` argument that you can a
 This function is not accessed anywhere yet. Instead of hard-coding the resource type into your policy, create a new module.
 
 Open `terraform-sentinel/modules/buckets.sentinel`{{open}} and paste the module below.
-
 
 <pre class="file" data-filename="terraform-sentinel/buckets.sentinel" data-target="append" >"import "find_resources"
 
